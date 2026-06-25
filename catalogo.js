@@ -118,7 +118,16 @@ do {
   console.log("6) Tiempo total visto");
   console.log("7) Salir");
 
-  opcion = prompt("Opción:");
+  opcion = prompt(`
+    Selecciona una opción:
+    1) Agregar
+    2) Ver todas
+    3) Marcar como vista
+    4) Filtrar por género
+    5) Recomendar
+    6) Tiempo total visto
+    7) Salir
+    `);
 
   if (opcion === "1") {
     const titulo = prompt("Título:");
