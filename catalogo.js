@@ -79,3 +79,19 @@ const recomendadas = recomendar().map((p) => p.titulo);
 console.log("Te recomendamos:", recomendadas);
 
 console.log("")
+
+console.log("%cEtapa 6 · Tiempo total visto (filter + reduce)", "font-weight: bold; color: green; font-size: 15px;");
+console.log("")
+
+// const tiempoTotalVisto = () => peliculas.filter(...).reduce(...);
+const tiempoTotalVisto = () =>
+  peliculas
+    .filter((p) => p.vista)
+    .reduce((acc, p) => acc + p.duracion, 0);
+
+// Marca "Matrix" e "Inception" como vistas y muestra el total de minutos
+marcarVista("Inception");
+marcarVista("Matrix");
+console.log(`Tiempo total visto: ${tiempoTotalVisto()} min`);
+
+console.log("")
