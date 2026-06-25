@@ -33,3 +33,25 @@ agregar("Toy Story", "Animación", 81);
 console.log(`Total de películas: ${peliculas.length}`);
 
 console.log("")
+
+console.log("%cEtapa 3 · Marcar como vista (find + cambiar estado)", "font-weight: bold; color: green; font-size: 15px;");
+console.log("")
+
+// const marcarVista = (titulo) => { ... find + validación + cambiar vista ... };
+const marcarVista = (titulo) => {
+  const peli = peliculas.find((p) => p.titulo === titulo);
+
+  if (!peli) {
+    console.log(`❌ No existe: ${titulo}`);
+    return;
+  }
+
+  peli.vista = true;
+  console.log(`✅ Marcada como vista: ${peli.titulo}`);
+};
+
+// Prueba: marcarVista("Matrix")  y  marcarVista("Avatar")
+marcarVista("Matrix");
+marcarVista("Avatar");
+
+console.log("")
