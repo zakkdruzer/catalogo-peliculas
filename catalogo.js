@@ -14,3 +14,22 @@ peliculas.forEach((p, i) => {
 });
 
 console.log("")
+
+console.log("%cEtapa 2 · Agregar películas", "font-weight: bold; color: green; font-size: 15px;");
+console.log("")
+
+// const agregar = (titulo, genero, duracion) => { ... push con vista: false ... };
+const agregar = (titulo, genero, duracion) => {
+  peliculas.push({
+    titulo,
+    genero,
+    duracion,
+    vista: false
+  });
+};
+
+// Agrega "Toy Story" (Animación, 81) y muestra peliculas.length
+agregar("Toy Story", "Animación", 81);
+console.log(`Total de películas: ${peliculas.length}`);
+
+console.log("")
