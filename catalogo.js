@@ -55,3 +55,15 @@ marcarVista("Matrix");
 marcarVista("Avatar");
 
 console.log("")
+
+console.log("%cEtapa 4 · Filtrar por género", "font-weight: bold; color: green; font-size: 15px;");
+console.log("")
+
+// const porGenero = (genero) => peliculas.filter(...);
+const porGenero = (genero) => peliculas.filter((p) => p.genero === genero);
+
+// Prueba: muestra los títulos de las películas de "Acción"
+const titulosAccion = porGenero("Acción").map((p) => p.titulo);
+console.log("Acción:", titulosAccion);
+
+console.log("")
