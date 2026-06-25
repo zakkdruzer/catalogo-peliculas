@@ -95,3 +95,57 @@ marcarVista("Matrix");
 console.log(`Tiempo total visto: ${tiempoTotalVisto()} min`);
 
 console.log("")
+
+console.log("%c🏆 Jefe Final · El menú do/while", "font-weight: bold; color: green; font-size: 15px;");
+console.log("")
+
+let opcion;
+
+const verTodas = () => {
+  peliculas.forEach((p, i) => {
+    const marca = p.vista ? "[✓]" : "[ ]";
+    console.log(`${marca} ${i + 1}. ${p.titulo} (${p.genero}, ${p.duracion} min)`);
+  });
+};
+
+do {
+  console.log("\n=== MI CATÁLOGO ===");
+  console.log("1) Agregar");
+  console.log("2) Ver todas");
+  console.log("3) Marcar como vista");
+  console.log("4) Filtrar por género");
+  console.log("5) Recomendar");
+  console.log("6) Tiempo total visto");
+  console.log("7) Salir");
+
+  opcion = prompt("Opción:");
+
+  if (opcion === "1") {
+    const titulo = prompt("Título:");
+    const genero = prompt("Género:");
+    const duracion = prompt("Duración en minutos:");
+
+    agregar(titulo, genero, duracion);
+    console.log(`✅ Agregada: ${titulo}`);
+  } else if (opcion === "2") {
+    verTodas();
+  } else if (opcion === "3") {
+    const titulo = prompt("Título:");
+    marcarVista(titulo);
+  } else if (opcion === "4") {
+    const genero = prompt("Género:");
+    const titulos = porGenero(genero).map((p) => p.titulo);
+    console.log(`${genero}:`, titulos);
+  } else if (opcion === "5") {
+    const titulos = recomendar().map((p) => p.titulo);
+    console.log("Te recomendamos:", titulos);
+  } else if (opcion === "6") {
+    console.log(`Tiempo visto: ${tiempoTotalVisto()} min`);
+  } else if (opcion === "7") {
+    console.log("¡Buen maratón! 🍿");
+  } else {
+    console.log("❌ Opción inválida");
+  }
+} while (opcion !== "7");
+
+console.log("")
