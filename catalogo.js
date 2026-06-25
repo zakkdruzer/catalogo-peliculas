@@ -67,3 +67,15 @@ const titulosAccion = porGenero("Acción").map((p) => p.titulo);
 console.log("Acción:", titulosAccion);
 
 console.log("")
+
+console.log("%cEtapa 5 · Recomendar las no vistas", "font-weight: bold; color: green; font-size: 15px;");
+console.log("")
+
+// const recomendar = () => peliculas.filter(...);
+const recomendar = () => peliculas.filter((p) => !p.vista);
+
+// Marca "Matrix" como vista y luego muestra los títulos recomendados
+const recomendadas = recomendar().map((p) => p.titulo);
+console.log("Te recomendamos:", recomendadas);
+
+console.log("")
